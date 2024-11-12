@@ -165,3 +165,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# _config.yml
+safe: true

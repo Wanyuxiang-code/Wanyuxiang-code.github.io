@@ -23,13 +23,16 @@ I'm a sophomore year undergraduate from ZJUI, with keen insterest in computer sc
 # 🔥 News
 - *2024.05*: &nbsp;🎉🎉 Attempt to build personal academic page and notebook page for sharing, explore more in notebook page! 
 
+- *2024.06*: Joined AI-Net lab for summer research focused on building Graph Foundation Model.
+
+
 
 # 📝 Publications 
 -  Waited for me to explore!
 
 
 # 🎖 Honors and Awards
-- All the past splendors will be marked in the life journey, I'm writing a new chapter in this adventure. 
+- *2024.10*: &nbsp;🎉🎉 Awarded the National Scholarship for the academic year 2023-2024
 
 # 📝 Notepage
 - Welcome to explore my notebook page, which documents my harvest during learning and restore some valuable resources.
