@@ -1,14 +1,15 @@
 # 新闻动态 - 按时间倒序排列，最新的放最上面
 # 格式：date（日期）, text（内容，支持 HTML）
 
-- date: "Oct 2024"
-  text: "🎉 Awarded the <strong>National Scholarship</strong> for the academic year 2023-2024!"
+- date: "Oct 2025"
+  text: "🎉 Awarded the <strong>National Scholarship</strong> for the academic year 2024-2025!"
+
+- date: "April 2025"
+  text: "📝 Completed my first full research cycle with a submission to <strong>KDD 2025</strong> — from literature review, experiments, paper writing to rebuttal. A valuable learning experience!"
 
 - date: "Jun 2024"
   text: "Joined <strong>AI-Net Lab</strong> for summer research focused on building Graph Foundation Model."
 
-- date: "May 2024"
-  text: "🎉 Launched personal academic page and notebook page for sharing!"
 
 # 添加新的新闻，复制下面的模板：
 # - date: "月份 年份"
