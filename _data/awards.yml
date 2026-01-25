@@ -1,0 +1,29 @@
+# 荣誉奖项 - 按时间倒序排列
+# 格式：year（年份）, title（奖项名称）, organization（颁发机构）, description（描述，可选）
+
+
+- year: "2024, 2025"
+  title: "Dean's List"
+  organization: "University of Illinois at Urbana-Champaign"
+
+- year: "2025"
+  title: "First Prize Scholarship for Academic Excellence"
+  organization: "Zhejiang University-University of Illinois Urbana-Champaign Institute"
+
+- year: "2024, 2025"
+  title: "National Scholarship"
+  organization: "Ministry of Education, China"
+
+- year: "2024, 2025"
+  title: "First Prize Scholarship"
+  organization: "Zhejiang University"
+
+- year: "2021, 2022"
+  title: "First Prize of CSMO (China Southeast Mathematical Olympiad)"
+  organization: "Chinese Mathematical Society"
+
+# 添加新奖项，复制下面的模板：
+# - year: "年份"
+#   title: "奖项名称"
+#   organization: "颁发机构"
+#   description: "描述（可选）"

@@ -1,0 +1,41 @@
+# 学术经历 - 包括研究经历和助教经历，按时间倒序排列
+# 格式：date（时间段）, organization（机构）, role（职位）, type（类型：research/teaching）, description（描述）
+
+- date: "Jun 2024 – Apr 2025"
+  organization: "AI-Net Lab, Zhejiang University"
+  role: "Research Intern"
+  type: "research"
+  description: "Working on Graph Foundation Model and Graph-Based In-context Learning. Exploring the intersection of graph neural networks and foundation models."
+
+- date: "Spring 2025"
+  organization: "ZJUI"
+  role: "Teaching Assistant for ECE 220: Computer Systems & Programming with Prof. Bhowmik"
+  type: "teaching"
+  description: >
+    Supported weekly labs and office hours and  helped students prepare for and debug machine problems (MPs).
+    Designed exam questions and produced recorded pre-exam review sessions based on sample problems.
+    Improved course infrastructure by refactoring the UIUC autograder to increase grading efficiency and reduce student-facing errors.
+    Provided continuous academic support through in-person sessions and online platforms.
+
+- date: "Fall 2024"
+  organization: "ZJUI"
+  role: "Teaching Assistant for MATH 257: Linear Algebra with Prof. Xiangming Meng"
+  type: "teaching"
+  description: >
+    Facilitated weekly discussion sessions, reviewing core theoretical concepts and guiding students through structured problem solving.
+    Provided in-person academic mentoring to clarify abstract concepts, support homework, and help students develop effective study strategies.
+    Proactively organized review sessions and shared comprehensive course notes synthesizing lecture slides and textbook materials.
+
+# 添加 Teaching Assistant 经历示例：
+# - date: "Fall 2024"
+#   organization: "ZJUI"
+#   role: "Teaching Assistant"
+#   type: "teaching"
+#   description: "TA for ECE 220: Computer Systems & Programming"
+
+# 添加新的经历，复制下面的模板：
+# - date: "时间"
+#   organization: "机构名称"
+#   role: "职位"
+#   type: "research 或 teaching"
+#   description: "描述"

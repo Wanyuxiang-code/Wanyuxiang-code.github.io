@@ -548,6 +548,33 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
 }
 
+/* Experience Type Badge */
+.timeline-type {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 12px;
+  margin-top: 4px;
+}
+
+.timeline-type-research {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.timeline-type-teaching {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
+
+.timeline-marker-teaching {
+  background: var(--color-secondary);
+  box-shadow: 0 0 0 2px var(--color-secondary-light);
+}
+
 /* --------------------------------------------------------------------------
    Projects Section
    -------------------------------------------------------------------------- */
@@ -735,6 +762,87 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-secondary);
   font-size: 0.88rem;
   line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Life Section
+   -------------------------------------------------------------------------- */
+.life-content {
+  max-width: 900px;
+}
+
+.life-intro {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.life-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.life-card {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.life-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+.life-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-secondary-light));
+  color: var(--color-accent);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.life-card-title {
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.life-card-desc {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.life-card-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin-top: auto;
+}
+
+.life-card-images img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform var(--transition-fast);
+}
+
+.life-card-images img:hover {
+  transform: scale(1.05);
 }
 
 /* --------------------------------------------------------------------------

@@ -1,0 +1,24 @@
+# 论文发表
+# 格式：title（标题）, authors（作者）, venue（发表venue）, year（年份）, links（链接列表）, image（论文图片，可选）
+
+# 目前暂无论文，添加后会自动显示
+# 添加论文，复制下面的模板：
+
+# - title: "论文标题"
+#   authors: "作者1, 作者2, <strong>你的名字</strong>, 作者3"
+#   venue: "Conference/Journal Name"
+#   year: "2024"
+#   image: "images/paper-thumbnail.jpg"
+#   links:
+#     - name: "Paper"
+#       url: "https://arxiv.org/xxx"
+#     - name: "Code"
+#       url: "https://github.com/xxx"
+#   description: "论文简介"
+
+- title: "Can Inherent Graph Structure Enhance In-Context Learning?"
+  authors: "Yifei Sun, Siyuan Gong, <strong>Yuxiang Wan</strong>, Zaoshi Wang, Haoyang Zhong, Chunping Wang, Lei CHEN, Yang Yang"
+  venue: "Preprint"
+  year: "2025"
+  image: "images/ContextG.png"
+  description: "We propose ContextG, the first framework to introduce graph structures into ICL. By modeling structural relationships among examples and test queries, ContextG enhances LLM reasoning while improving efficiency."

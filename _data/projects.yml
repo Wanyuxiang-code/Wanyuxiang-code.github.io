@@ -1,0 +1,26 @@
+# 项目列表
+# 格式：title（标题）, description（描述）, icon（图标）, tags（标签列表）, link（链接，可选）
+
+- title: "Yuxiang's Notepage"
+  description: "A comprehensive notebook documenting my learning journey, valuable resources, and study notes."
+  icon: "fas fa-book-open"
+  tags:
+    - "Documentation"
+    - "Knowledge Base"
+  link: "https://yuxiangnote.netlify.app"
+
+- title: "More Coming Soon..."
+  description: "Exciting projects are in development. Stay tuned for updates!"
+  icon: "fas fa-rocket"
+  tags: []
+  link: ""
+  placeholder: true  # 标记为占位项目
+
+# 添加新项目，复制下面的模板：
+# - title: "项目名称"
+#   description: "项目描述"
+#   icon: "fas fa-xxx"  # Font Awesome 图标
+#   tags:
+#     - "标签1"
+#     - "标签2"
+#   link: "项目链接（可选）"

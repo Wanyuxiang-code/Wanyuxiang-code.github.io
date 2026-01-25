@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Yuxiang Wan | 万煜翔</title>
-  <meta name="description" content="Personal academic homepage of Yuxiang Wan, an undergraduate student at ZJUI, Zhejiang University.">
-  <meta name="keywords" content="Yuxiang Wan, 万煜翔, ZJUI, Zhejiang University, Computer Science">
+  <title>{{ site.data.profile.name_en }} | {{ site.data.profile.name_cn }}</title>
+  <meta name="description" content="Personal academic homepage of {{ site.data.profile.name_en }}, {{ site.data.profile.title }}.">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -32,7 +33,7 @@
   <!-- Navigation -->
   <header class="site-header">
     <div class="header-wrapper">
-      <a href="#" class="site-logo">Yuxiang</a>
+      <a href="#" class="site-logo">{{ site.data.profile.name_en | split: ' ' | first }}</a>
       
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
@@ -47,6 +48,7 @@
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#publications" class="nav-link">Publications</a></li>
           <li><a href="#awards" class="nav-link">Awards</a></li>
+          <li><a href="#life" class="nav-link">Life</a></li>
         </ul>
       </nav>
     </div>
@@ -60,22 +62,18 @@
     <div class="hero-content">
       <div class="profile-card">
         <div class="profile-avatar">
-          <img src="images/skydeck_crop.jpg" alt="Yuxiang Wan">
+          <img src="{{ site.data.profile.avatar }}" alt="{{ site.data.profile.name_en }}">
         </div>
         <div class="profile-info">
-          <h1 class="profile-name">Yuxiang Wan <span class="chinese-name">万煜翔</span></h1>
-          <p class="profile-title">Undergraduate @ ZJUI</p>
-          <p class="profile-affiliation">Zhejiang University - UIUC Institute</p>
+          <h1 class="profile-name">{{ site.data.profile.name_en }} <span class="chinese-name">{{ site.data.profile.name_cn }}</span></h1>
+          <p class="profile-title">{{ site.data.profile.title }}</p>
+          <p class="profile-affiliation">{{ site.data.profile.affiliation }}</p>
           <div class="profile-links">
-            <a href="https://github.com/Wanyuxiang-code" target="_blank" rel="noopener" class="social-link" title="GitHub">
-              <i class="fab fa-github"></i>
+            {% for link in site.data.profile.social %}
+            <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %} class="social-link" title="{{ link.name }}">
+              <i class="{{ link.icon }}"></i>
             </a>
-            <a href="mailto:yuxiang.23@intl.zju.edu.cn" class="social-link" title="Email">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://yuxiangnote.netlify.app" target="_blank" rel="noopener" class="social-link" title="Notepage">
-              <i class="fas fa-book"></i>
-            </a>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -93,12 +91,12 @@
           About Me
         </h2>
         <div class="about-content">
-          <p>
-            I'm a sophomore year undergraduate from <a href="https://zjui.intl.zju.edu.cn/" target="_blank" rel="noopener">ZJUI (Zhejiang University - UIUC Institute)</a>, with keen interest in computer science. Despite limited understanding of diverse branches of computer science, I am eager to combine the rigorous theoretical analysis with ingenious computer engineering practices, exploring the infinite possibilities in the computer science domain.
-          </p>
+          <p>{{ site.data.profile.about }}</p>
+          {% if site.data.profile.about_highlight %}
           <div class="about-highlight">
-            <p>I am passionate about learning and sharing knowledge. Feel free to explore my <a href="https://yuxiangnote.netlify.app" target="_blank" rel="noopener">Notepage</a> where I document my learning journey!</p>
+            <p>{{ site.data.profile.about_highlight }}</p>
           </div>
+          {% endif %}
         </div>
       </div>
     </section>
@@ -111,18 +109,12 @@
           News
         </h2>
         <ul class="news-list">
+          {% for item in site.data.news %}
           <li class="news-item">
-            <span class="news-date">Oct 2024</span>
-            <span class="news-text">🎉 Awarded the <strong>National Scholarship</strong> for the academic year 2023-2024!</span>
+            <span class="news-date">{{ item.date }}</span>
+            <span class="news-text">{{ item.text }}</span>
           </li>
-          <li class="news-item">
-            <span class="news-date">Jun 2024</span>
-            <span class="news-text">Joined <strong>AI-Net Lab</strong> for summer research focused on building Graph Foundation Model.</span>
-          </li>
-          <li class="news-item">
-            <span class="news-date">May 2024</span>
-            <span class="news-text">🎉 Launched personal academic page and notebook page for sharing!</span>
-          </li>
+          {% endfor %}
         </ul>
       </div>
     </section>
@@ -135,20 +127,24 @@
           Education
         </h2>
         <div class="timeline">
+          {% for edu in site.data.education %}
           <article class="timeline-entry">
             <div class="timeline-marker"></div>
             <div class="timeline-meta">
-              <span class="timeline-date">Sep 2023 – Present</span>
+              <span class="timeline-date">{{ edu.date }}</span>
+              {% if edu.logo %}
               <div class="timeline-logo">
-                <img src="images/zjui-logo.png" alt="ZJUI" onerror="this.style.display='none'">
+                <img src="{{ edu.logo }}" alt="{{ edu.school }}">
               </div>
+              {% endif %}
             </div>
             <div class="timeline-content">
-              <h3>Zhejiang University - UIUC Institute (ZJUI)</h3>
-              <p class="timeline-role">Bachelor of Engineering</p>
-              <p class="timeline-desc">Major in Computer Engineering. Focusing on computer science fundamentals, algorithms, and machine learning.</p>
+              <h3>{{ edu.school }}</h3>
+              <p class="timeline-role">{{ edu.degree }}</p>
+              <p class="timeline-desc">{{ edu.description }}</p>
             </div>
           </article>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -158,20 +154,25 @@
       <div class="container">
         <h2 class="section-title">
           <span class="title-icon">✦</span>
-          Experience
+          Academic Experience
         </h2>
         <div class="timeline">
+          {% for exp in site.data.experience %}
           <article class="timeline-entry">
-            <div class="timeline-marker"></div>
+            <div class="timeline-marker {% if exp.type == 'teaching' %}timeline-marker-teaching{% endif %}"></div>
             <div class="timeline-meta">
-              <span class="timeline-date">Jun 2024 – Present</span>
+              <span class="timeline-date">{{ exp.date }}</span>
+              {% if exp.type %}
+              <span class="timeline-type timeline-type-{{ exp.type }}">{{ exp.type | capitalize }}</span>
+              {% endif %}
             </div>
             <div class="timeline-content">
-              <h3>AI-Net Lab, Zhejiang University</h3>
-              <p class="timeline-role">Research Intern</p>
-              <p class="timeline-desc">Working on Graph Foundation Model research. Exploring the intersection of graph neural networks and foundation models.</p>
+              <h3>{{ exp.organization }}</h3>
+              <p class="timeline-role">{{ exp.role }}</p>
+              <p class="timeline-desc">{{ exp.description }}</p>
             </div>
           </article>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -184,39 +185,27 @@
           Projects
         </h2>
         <div class="projects-grid">
-          <div class="project-card">
+          {% for project in site.data.projects %}
+          <div class="project-card {% if project.placeholder %}project-card-placeholder{% endif %}">
             <div class="project-icon">
-              <i class="fas fa-code"></i>
+              <i class="{{ project.icon }}"></i>
             </div>
-            <h3 class="project-title">Personal Academic Page</h3>
-            <p class="project-desc">Built this personal website from scratch to showcase my academic journey and share knowledge with others.</p>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-desc">{{ project.description }}</p>
+            {% if project.tags.size > 0 %}
             <div class="project-tags">
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Jekyll</span>
+              {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
             </div>
-          </div>
-          <div class="project-card">
-            <div class="project-icon">
-              <i class="fas fa-book-open"></i>
-            </div>
-            <h3 class="project-title">Yuxiang's Notepage</h3>
-            <p class="project-desc">A comprehensive notebook documenting my learning journey, valuable resources, and study notes.</p>
-            <div class="project-tags">
-              <span class="tag">Documentation</span>
-              <span class="tag">Knowledge Base</span>
-            </div>
-            <a href="https://yuxiangnote.netlify.app" target="_blank" rel="noopener" class="project-link">
-              Visit Notepage <i class="fas fa-arrow-right"></i>
+            {% endif %}
+            {% if project.link and project.link != "" %}
+            <a href="{{ project.link }}" target="_blank" rel="noopener" class="project-link">
+              Visit Project <i class="fas fa-arrow-right"></i>
             </a>
+            {% endif %}
           </div>
-          <div class="project-card project-card-placeholder">
-            <div class="project-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <h3 class="project-title">More Coming Soon...</h3>
-            <p class="project-desc">Exciting projects are in development. Stay tuned for updates!</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -228,6 +217,36 @@
           <span class="title-icon">✦</span>
           Publications
         </h2>
+        {% if site.data.publications.size > 0 %}
+        <div class="pub-list">
+          {% for pub in site.data.publications %}
+          <div class="pub">
+            {% if pub.image %}
+            <div class="pub-left">
+              <img class="intro-img" src="{{ pub.image }}">
+            </div>
+            {% endif %}
+            <div class="pub-right">
+              <div class="title">{{ pub.title }}</div>
+              <div class="authors">{{ pub.authors }}</div>
+              <div class="publish">
+                <span class="publisher">{{ pub.venue }}, {{ pub.year }}</span>
+              </div>
+              {% if pub.links %}
+              <div class="tags">
+                {% for link in pub.links %}
+                <a class="tag" href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+                {% endfor %}
+              </div>
+              {% endif %}
+              {% if pub.description %}
+              <span>{{ pub.description }}</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
         <div class="publications-placeholder">
           <div class="placeholder-icon">
             <i class="fas fa-file-alt"></i>
@@ -235,6 +254,7 @@
           <p>Publications are on the way! Currently exploring research topics and working on exciting projects.</p>
           <p class="placeholder-subtitle">Stay tuned for future updates.</p>
         </div>
+        {% endif %}
       </div>
     </section>
 
@@ -243,23 +263,60 @@
       <div class="container">
         <h2 class="section-title">
           <span class="title-icon">✦</span>
-          Honors & Awards
+          Selected Honors & Awards
         </h2>
         <ul class="awards-list">
+          {% for award in site.data.awards %}
           <li class="award-item">
-            <span class="award-year">2024</span>
+            <span class="award-year">{{ award.year }}</span>
             <div class="award-content">
-              <h3 class="award-title">National Scholarship</h3>
-              <p class="award-org">Ministry of Education, China</p>
-              <p class="award-desc">Awarded for outstanding academic performance in the 2023-2024 academic year at Zhejiang University.</p>
+              <h3 class="award-title">{{ award.title }}</h3>
+              <p class="award-org">{{ award.organization }}</p>
+              {% if award.description %}
+              <p class="award-desc">{{ award.description }}</p>
+              {% endif %}
             </div>
           </li>
+          {% endfor %}
         </ul>
       </div>
     </section>
 
+    <!-- Life Section -->
+    <section class="section section-alt" id="life">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-icon">✦</span>
+          Life
+        </h2>
+        <div class="life-content">
+          {% if site.data.life.intro %}
+          <p class="life-intro">{{ site.data.life.intro }}</p>
+          {% endif %}
+          <div class="life-grid">
+            {% for item in site.data.life.items %}
+            <div class="life-card">
+              <div class="life-card-icon">
+                <i class="{{ item.icon }}"></i>
+              </div>
+              <h3 class="life-card-title">{{ item.title }}</h3>
+              <p class="life-card-desc">{{ item.description }}</p>
+              {% if item.images.size > 0 %}
+              <div class="life-card-images">
+                {% for img in item.images %}
+                <img src="{{ img }}" alt="{{ item.title }}">
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Notepage Section -->
-    <section class="section section-alt" id="notepage">
+    <section class="section" id="notepage">
       <div class="container">
         <h2 class="section-title">
           <span class="title-icon">✦</span>
@@ -270,8 +327,8 @@
             <div class="notepage-icon">
               <i class="fas fa-feather-alt"></i>
             </div>
-            <h3>Yuxiang's Learning Notes</h3>
-            <p>Welcome to explore my notebook page, which documents my harvest during learning and restores some valuable resources. It's a place where I share insights, tutorials, and study materials.</p>
+            <h3>{{ site.data.profile.name_en | split: ' ' | first }}'s Learning Notes</h3>
+            <p>Welcome to explore my notebook page, which documents my harvest during learning and restores some valuable resources.</p>
             <a href="https://yuxiangnote.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">
               <i class="fas fa-external-link-alt"></i>
               Visit Notepage
@@ -289,26 +346,22 @@
       <div class="footer-content">
         <div class="footer-info">
           <h3>Get in Touch</h3>
-          <p>Great ideas and improvements come from open discussions and debates in academia. If you have any thoughts, disagreements with my work, or fresh ideas you'd like to share, I'd be grateful to hear from you.</p>
+          <p>Great ideas and improvements come from open discussions. If you have any thoughts or fresh ideas you'd like to share, I'd be grateful to hear from you.</p>
           <p class="footer-email">
             <i class="fas fa-envelope"></i>
             <a href="mailto:yuxiang.23@intl.zju.edu.cn">yuxiang.23@intl.zju.edu.cn</a>
           </p>
         </div>
         <div class="footer-social">
-          <a href="https://github.com/Wanyuxiang-code" target="_blank" rel="noopener" class="social-link" title="GitHub">
-            <i class="fab fa-github"></i>
+          {% for link in site.data.profile.social %}
+          <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %} class="social-link" title="{{ link.name }}">
+            <i class="{{ link.icon }}"></i>
           </a>
-          <a href="mailto:yuxiang.23@intl.zju.edu.cn" class="social-link" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://yuxiangnote.netlify.app" target="_blank" rel="noopener" class="social-link" title="Notepage">
-            <i class="fas fa-book"></i>
-          </a>
+          {% endfor %}
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Yuxiang Wan. All rights reserved.</p>
+        <p>&copy; 2024 {{ site.data.profile.name_en }}. All rights reserved.</p>
         <p class="footer-update">Last updated: January 2025</p>
       </div>
     </div>

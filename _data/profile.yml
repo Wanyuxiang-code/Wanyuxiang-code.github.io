@@ -1,0 +1,27 @@
+# 个人信息 - 修改这里的内容会自动更新网站
+name_en: "Yuxiang Wan"
+name_cn: "万煜翔"
+title: "Undergraduate @ ZJUI"
+affiliation: "Zhejiang University - UIUC Institute"
+
+# 头像图片路径
+avatar: "images/avator.jpg"
+
+# 社交链接
+social:
+  - name: "GitHub"
+    url: "https://github.com/Wanyuxiang-code"
+    icon: "fab fa-github"
+  - name: "Email"
+    url: "mailto:yuxiang.23@intl.zju.edu.cn"
+    icon: "fas fa-envelope"
+  - name: "Notepage"
+    url: "https://yuxiangnote.netlify.app"
+    icon: "fas fa-book"
+
+# 关于我 - 支持 HTML 标签
+about: |
+  I'm a sophomore year undergraduate from <a href="https://zjui.intl.zju.edu.cn/" target="_blank">ZJUI (Zhejiang University - UIUC Institute)</a>, with keen interest in computer science. Despite limited understanding of diverse branches of computer science, I am eager to combine the rigorous theoretical analysis with ingenious computer engineering practices, exploring the infinite possibilities in the computer science domain.
+
+about_highlight: |
+  I am passionate about learning and sharing knowledge. Feel free to explore my <a href="https://yuxiangnote.netlify.app" target="_blank">Notepage</a> where I document my learning journey!

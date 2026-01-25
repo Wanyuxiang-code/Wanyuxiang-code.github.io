@@ -1,0 +1,22 @@
+# 个人生活 - 展示兴趣爱好、旅行等
+# 格式：title（标题）, description（描述）, images（图片列表，可选）, icon（图标）
+
+intro: |
+  Beyond academics, I enjoy exploring the world and experiencing different cultures. 
+  Here are some moments from my life journey.
+
+items:
+  - title: "Photography & Travel"
+    description: "I love capturing beautiful moments during my travels. Some of my favorite destinations include Boston, Chicago, and New York."
+    icon: "fas fa-camera"
+    images:
+      - "images/Charles_river.jpg"
+      - "images/Chicago_day.jpg"
+
+# 添加更多生活内容，复制下面的模板：
+#  - title: "兴趣标题"
+#    description: "描述"
+#    icon: "fas fa-xxx"  # Font Awesome 图标
+#    images:
+#      - "images/图片1.jpg"
+#      - "images/图片2.jpg"

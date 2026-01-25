@@ -1,0 +1,15 @@
+# 教育经历 - 按时间倒序排列
+# 格式：date（时间段）, school（学校）, degree（学位/专业）, description（描述）, logo（可选，学校logo路径）
+
+- date: "Sep 2023 - Present"
+  school: "Zhejiang University - UIUC Institute (ZJUI)"
+  degree: "Bachelor of Engineering"
+  description: "Major in Computer Engineering. Focusing on computer science fundamentals, algorithms, and machine learning."
+  logo: "images/ZJUI-logo.png"  # 可选：images/zjui-logo.png
+
+# 添加新的教育经历，复制下面的模板：
+# - date: "开始时间 – 结束时间"
+#   school: "学校名称"
+#   degree: "学位/专业"
+#   description: "描述"
+#   logo: ""
