@@ -20,13 +20,14 @@ items:
     icon: "fas fa-dumbbell"
     images: 
       - "images/boating.jpg"
-      - "images/tennis.jpg"
+      - "images/tennis.png"
   
   - title: "Cultural Exchange"
     description: "Served as team leader in the 2025 Zhejiang-Hong Kong-Macao College Exchange Program. Through this experience, I connected with students from universities across the three regions, gained broader perspectives on diverse cultures and academic life, and made lasting friendships."
     icon: "fas fa-users"
     images:
       - "images/Macau.jpg"
+      - "images/HKgroup.jpg"
 
 # 添加更多生活内容，复制下面的模板：
 #  - title: "兴趣标题"
