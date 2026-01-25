@@ -43,11 +43,11 @@
         <ul class="nav-links">
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#news" class="nav-link">News</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#awards" class="nav-link">Awards</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#life" class="nav-link">Life</a></li>
         </ul>
       </nav>
@@ -83,7 +83,7 @@
   <!-- Main Content -->
   <main class="main-content">
     
-    <!-- About Section -->
+    <!-- 1. About Section -->
     <section class="section" id="about">
       <div class="container">
         <h2 class="section-title">
@@ -101,7 +101,7 @@
       </div>
     </section>
 
-    <!-- News Section -->
+    <!-- 2. News Section -->
     <section class="section section-alt" id="news">
       <div class="container">
         <h2 class="section-title">
@@ -119,99 +119,8 @@
       </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="section" id="education">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-icon">✦</span>
-          Education
-        </h2>
-        <div class="timeline">
-          {% for edu in site.data.education %}
-          <article class="timeline-entry">
-            <div class="timeline-marker"></div>
-            <div class="timeline-meta">
-              <span class="timeline-date">{{ edu.date }}</span>
-              {% if edu.logo %}
-              <div class="timeline-logo">
-                <img src="{{ edu.logo }}" alt="{{ edu.school }}">
-              </div>
-              {% endif %}
-            </div>
-            <div class="timeline-content">
-              <h3>{{ edu.school }}</h3>
-              <p class="timeline-role">{{ edu.degree }}</p>
-              <p class="timeline-desc">{{ edu.description }}</p>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section section-alt" id="experience">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-icon">✦</span>
-          Academic Experience
-        </h2>
-        <div class="timeline">
-          {% for exp in site.data.experience %}
-          <article class="timeline-entry">
-            <div class="timeline-marker {% if exp.type == 'teaching' %}timeline-marker-teaching{% endif %}"></div>
-            <div class="timeline-meta">
-              <span class="timeline-date">{{ exp.date }}</span>
-              {% if exp.type %}
-              <span class="timeline-type timeline-type-{{ exp.type }}">{{ exp.type | capitalize }}</span>
-              {% endif %}
-            </div>
-            <div class="timeline-content">
-              <h3>{{ exp.organization }}</h3>
-              <p class="timeline-role">{{ exp.role }}</p>
-              <p class="timeline-desc">{{ exp.description }}</p>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-icon">✦</span>
-          Projects
-        </h2>
-        <div class="projects-grid">
-          {% for project in site.data.projects %}
-          <div class="project-card {% if project.placeholder %}project-card-placeholder{% endif %}">
-            <div class="project-icon">
-              <i class="{{ project.icon }}"></i>
-            </div>
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-desc">{{ project.description }}</p>
-            {% if project.tags.size > 0 %}
-            <div class="project-tags">
-              {% for tag in project.tags %}
-              <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
-            {% if project.link and project.link != "" %}
-            <a href="{{ project.link }}" target="_blank" rel="noopener" class="project-link">
-              Visit Project <i class="fas fa-arrow-right"></i>
-            </a>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section class="section section-alt" id="publications">
+    <!-- 3. Publications Section -->
+    <section class="section" id="publications">
       <div class="container">
         <h2 class="section-title">
           <span class="title-icon">✦</span>
@@ -258,7 +167,35 @@
       </div>
     </section>
 
-    <!-- Awards Section -->
+    <!-- 4. Experience Section -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-icon">✦</span>
+          Experience
+        </h2>
+        <div class="timeline">
+          {% for exp in site.data.experience %}
+          <article class="timeline-entry">
+            <div class="timeline-marker {% if exp.type == 'teaching' %}timeline-marker-teaching{% endif %}"></div>
+            <div class="timeline-meta">
+              <span class="timeline-date">{{ exp.date }}</span>
+              {% if exp.type %}
+              <span class="timeline-type timeline-type-{{ exp.type }}">{{ exp.type | capitalize }}</span>
+              {% endif %}
+            </div>
+            <div class="timeline-content">
+              <h3>{{ exp.organization }}</h3>
+              <p class="timeline-role">{{ exp.role }}</p>
+              <p class="timeline-desc">{{ exp.description }}</p>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Awards Section -->
     <section class="section" id="awards">
       <div class="container">
         <h2 class="section-title">
@@ -282,7 +219,70 @@
       </div>
     </section>
 
-    <!-- Life Section -->
+    <!-- 6. Projects Section -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-icon">✦</span>
+          Projects
+        </h2>
+        <div class="projects-grid">
+          {% for project in site.data.projects %}
+          <div class="project-card {% if project.placeholder %}project-card-placeholder{% endif %}">
+            <div class="project-icon">
+              <i class="{{ project.icon }}"></i>
+            </div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-desc">{{ project.description }}</p>
+            {% if project.tags.size > 0 %}
+            <div class="project-tags">
+              {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% if project.link and project.link != "" %}
+            <a href="{{ project.link }}" target="_blank" rel="noopener" class="project-link">
+              Visit Project <i class="fas fa-arrow-right"></i>
+            </a>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Education Section -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-icon">✦</span>
+          Education
+        </h2>
+        <div class="timeline">
+          {% for edu in site.data.education %}
+          <article class="timeline-entry">
+            <div class="timeline-marker"></div>
+            <div class="timeline-meta">
+              <span class="timeline-date">{{ edu.date }}</span>
+              {% if edu.logo %}
+              <div class="timeline-logo">
+                <img src="{{ edu.logo }}" alt="{{ edu.school }}">
+              </div>
+              {% endif %}
+            </div>
+            <div class="timeline-content">
+              <h3>{{ edu.school }}</h3>
+              <p class="timeline-role">{{ edu.degree }}</p>
+              <p class="timeline-desc">{{ edu.description }}</p>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Life Section -->
     <section class="section section-alt" id="life">
       <div class="container">
         <h2 class="section-title">
@@ -315,7 +315,7 @@
       </div>
     </section>
 
-    <!-- Notepage Section -->
+    <!-- 9. Notepage Section -->
     <section class="section" id="notepage">
       <div class="container">
         <h2 class="section-title">
