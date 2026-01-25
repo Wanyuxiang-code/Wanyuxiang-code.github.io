@@ -44,20 +44,25 @@
   // Active Navigation Link on Scroll
   // ============================================================
   function updateActiveNavLink() {
-    const scrollPosition = window.scrollY + 150;
-
+    const headerHeight = header ? header.offsetHeight : 64;
+    const scrollPosition = window.pageYOffset + headerHeight + 50;
+    
+    let currentSection = null;
+    
     sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + window.pageYOffset;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (currentSection && link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
       }
     });
   }
