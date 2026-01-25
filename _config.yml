@@ -3,7 +3,7 @@
 # =============================================================================
 
 # Site Settings
-title: "Yuxiang Wan | 万宇翔"
+title: "Yuxiang Wan | 万煜翔"
 description: "Personal academic homepage of Yuxiang Wan, an undergraduate student at ZJUI, Zhejiang University."
 url: "https://wanyuxiang-code.github.io"
 baseurl: ""
@@ -13,7 +13,7 @@ repository: "Wanyuxiang-code/Wanyuxiang-code.github.io"
 author:
   name: "Yuxiang Wan"
   chinese_name: "万煜翔"
-  avatar: "images/avatar.jpg"
+  avatar: "images/skydeck_crop.jpg"
   bio: "Undergraduate @ ZJUI"
   affiliation: "Zhejiang University - UIUC Institute"
   location: "Hangzhou, China"
