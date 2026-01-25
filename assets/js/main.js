@@ -74,10 +74,11 @@
       
       if (targetSection) {
         const headerHeight = header.offsetHeight;
-        const targetPosition = targetSection.offsetTop - headerHeight;
+        const extraOffset = 20; // Extra space above section title
+        const targetPosition = targetSection.offsetTop - headerHeight - extraOffset;
         
         window.scrollTo({
-          top: targetPosition,
+          top: Math.max(0, targetPosition),
           behavior: 'smooth'
         });
 
@@ -184,9 +185,10 @@
           if (target) {
             e.preventDefault();
             const headerHeight = header ? header.offsetHeight : 0;
-            const targetPosition = target.offsetTop - headerHeight;
+            const extraOffset = 20; // Extra space above section title
+            const targetPosition = target.offsetTop - headerHeight - extraOffset;
             window.scrollTo({
-              top: targetPosition,
+              top: Math.max(0, targetPosition),
               behavior: 'smooth'
             });
           }
