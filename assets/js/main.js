@@ -73,9 +73,10 @@
       const targetSection = document.querySelector(href);
       
       if (targetSection) {
-        const headerHeight = header.offsetHeight;
-        const extraOffset = 20; // Extra space above section title
-        const targetPosition = targetSection.offsetTop - headerHeight - extraOffset;
+        const headerHeight = header ? header.offsetHeight : 64;
+        const extraOffset = 20;
+        const rect = targetSection.getBoundingClientRect();
+        const targetPosition = rect.top + window.pageYOffset - headerHeight - extraOffset;
         
         window.scrollTo({
           top: Math.max(0, targetPosition),
@@ -176,17 +177,18 @@
       }
     });
 
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scroll for all anchor links (skip nav-links as they have their own handler)
+    document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href !== '#' && href.length > 1) {
           const target = document.querySelector(href);
           if (target) {
             e.preventDefault();
-            const headerHeight = header ? header.offsetHeight : 0;
-            const extraOffset = 20; // Extra space above section title
-            const targetPosition = target.offsetTop - headerHeight - extraOffset;
+            const headerHeight = header ? header.offsetHeight : 64;
+            const extraOffset = 20;
+            const rect = target.getBoundingClientRect();
+            const targetPosition = rect.top + window.pageYOffset - headerHeight - extraOffset;
             window.scrollTo({
               top: Math.max(0, targetPosition),
               behavior: 'smooth'
