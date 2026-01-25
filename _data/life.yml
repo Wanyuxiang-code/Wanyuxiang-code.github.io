@@ -10,8 +10,23 @@ items:
     description: "I love capturing beautiful moments during my travels. Some of my favorite destinations include Boston, Chicago, and New York."
     icon: "fas fa-camera"
     images:
-      - "images/Charles_river.jpg"
+      - "images/Boston_trail.jpg"
       - "images/Chicago_day.jpg"
+      - "images/Newyork_night.jpg"
+      - "images/Boston_statue.jpg"
+  
+  - title: "Sports & Fitness"
+    description: "I enjoy playing sports and staying active. Recently, I've been exploring tennis, gym workouts, and rowing — always eager to try new sports!"
+    icon: "fas fa-dumbbell"
+    images: 
+      - "images/boating.jpg"
+      - "images/tennis.jpg"
+  
+  - title: "Cultural Exchange"
+    description: "Served as team leader in the 2025 Zhejiang-Hong Kong-Macao College Exchange Program. Through this experience, I connected with students from universities across the three regions, gained broader perspectives on diverse cultures and academic life, and made lasting friendships."
+    icon: "fas fa-users"
+    images:
+      - "images/Macau.jpg"
 
 # 添加更多生活内容，复制下面的模板：
 #  - title: "兴趣标题"
