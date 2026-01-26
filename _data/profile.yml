@@ -13,7 +13,7 @@ social:
     url: "https://github.com/Wanyuxiang-code"
     icon: "fab fa-github"
   - name: "Email"
-    url: "mailto:yuxiang.23@intl.zju.edu.cn"
+    url: "mailto:ywan18@illinois.edu"
     icon: "fas fa-envelope"
   - name: "Notepage"
     url: "https://yuxiangnote.netlify.app"
@@ -24,6 +24,10 @@ about: |
   I'm a junior year undergraduate in Computer Engineering, currently pursuing a dual degree from University of Illinois Urbana-Champaign and Zhejiang University..
 
 about_highlight: |
-  I am interested in various aspects of machine learning and computer systems:
+  I am interested in various aspects of machine learning and computer systems.
+
+  Links:
+  📄 <a href="files/CV_YuxiangWan.pdf" target="_blank">Curriculum Vitae</a> &nbsp;|&nbsp; 
+  📝 <a href="files/UIUC_Transcript.pdf" target="_blank">UIUC Transcript</a>
   
   I am passionate about learning and sharing knowledge. Feel free to explore my <a href="https://yuxiangnote.netlify.app" target="_blank">Notepage</a> where I document my learning journey!

@@ -1,3 +1,6 @@
 _site/
 push.sh
 .DS_Store
+files/*.tex
+files/CV_Siyuan_Gong.pdf
+
