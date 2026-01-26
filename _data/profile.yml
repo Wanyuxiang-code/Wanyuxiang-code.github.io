@@ -21,13 +21,24 @@ social:
 
 # 关于我 - 支持 HTML 标签
 about: |
-  I'm a junior year undergraduate in Computer Engineering, currently pursuing a dual degree from University of Illinois Urbana-Champaign and Zhejiang University..
+  I'm a junior year undergraduate in Computer Engineering, currently pursuing a dual degree from University of Illinois Urbana-Champaign and Zhejiang University.
 
 about_highlight: |
-  I am interested in various aspects of machine learning and computer systems.
+  I am exploring the intersection of <strong>machine learning and computer systems</strong>, and I am currently building strong foundations in modern ML workflows and systems fundamentals.
 
-  Links:
+  <ul>
+    <li>
+      Learning the systems challenges behind <strong>LLM training and inference</strong>
+      (e.g., memory, communication, and throughput bottlenecks).
+    </li>
+    <li>
+      Exploring <strong>reinforcement learning / multi-agent</strong> workloads from a systems perspective,
+      focusing on scalability and experiment infrastructure.
+    </li>
+  </ul>
+  <br><br>
+  <strong>Links:</strong><br>
   📄 <a href="files/CV_YuxiangWan.pdf" target="_blank">Curriculum Vitae</a> &nbsp;|&nbsp; 
   📝 <a href="files/UIUC_Transcript.pdf" target="_blank">UIUC Transcript</a>
-  
+  <br><br>
   I am passionate about learning and sharing knowledge. Feel free to explore my <a href="https://yuxiangnote.netlify.app" target="_blank">Notepage</a> where I document my learning journey!
