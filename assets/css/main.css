@@ -405,6 +405,22 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-primary);
 }
 
+.about-highlight ul {
+  margin: 12px 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.about-highlight ul li {
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+.about-highlight ul li:last-child {
+  margin-bottom: 0;
+}
+
 /* --------------------------------------------------------------------------
    News Section
    -------------------------------------------------------------------------- */
