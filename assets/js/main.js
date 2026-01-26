@@ -15,6 +15,11 @@
   const navLinks = document.querySelectorAll('.nav-link');
   const backToTop = document.getElementById('backToTop');
   const sections = document.querySelectorAll('.section[id]');
+  
+  // Lightbox elements
+  const profileAvatar = document.getElementById('profileAvatar');
+  const lightboxOverlay = document.getElementById('lightboxOverlay');
+  const lightboxClose = document.getElementById('lightboxClose');
 
   // ============================================================
   // Header Scroll Effect
@@ -125,6 +130,30 @@
   }
 
   // ============================================================
+  // Image Lightbox
+  // ============================================================
+  function openLightbox() {
+    if (lightboxOverlay) {
+      lightboxOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLightbox() {
+    if (lightboxOverlay) {
+      lightboxOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function handleLightboxClick(e) {
+    // Close lightbox when clicking on the overlay (but not on the image)
+    if (e.target === lightboxOverlay) {
+      closeLightbox();
+    }
+  }
+
+  // ============================================================
   // Throttle Function for Performance
   // ============================================================
   function throttle(func, limit) {
@@ -175,12 +204,27 @@
     // Close mobile nav on outside click
     document.addEventListener('click', handleClickOutside);
 
-    // Handle escape key to close mobile nav
+    // Handle escape key to close mobile nav or lightbox
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && siteNav.classList.contains('open')) {
-        closeMobileNav();
+      if (e.key === 'Escape') {
+        if (lightboxOverlay && lightboxOverlay.classList.contains('active')) {
+          closeLightbox();
+        } else if (siteNav.classList.contains('open')) {
+          closeMobileNav();
+        }
       }
     });
+
+    // Lightbox event listeners
+    if (profileAvatar) {
+      profileAvatar.addEventListener('click', openLightbox);
+    }
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+    if (lightboxOverlay) {
+      lightboxOverlay.addEventListener('click', handleLightboxClick);
+    }
 
     // Smooth scroll for all anchor links (skip nav-links as they have their own handler)
     document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach(anchor => {

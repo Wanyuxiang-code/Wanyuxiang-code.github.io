@@ -61,7 +61,7 @@
     </div>
     <div class="hero-content">
       <div class="profile-card">
-        <div class="profile-avatar">
+        <div class="profile-avatar" id="profileAvatar" title="Click to enlarge">
           <img src="{{ site.data.profile.avatar }}" alt="{{ site.data.profile.name_en }}">
         </div>
         <div class="profile-info">
@@ -375,6 +375,16 @@
   <a href="#" class="back-to-top" id="backToTop">
     <i class="fas fa-chevron-up"></i>
   </a>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="lightbox-content">
+      <img src="{{ site.data.profile.avatar }}" alt="{{ site.data.profile.name_en }}" id="lightboxImage">
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
