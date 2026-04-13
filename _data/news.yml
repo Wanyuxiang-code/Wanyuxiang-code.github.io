@@ -1,6 +1,9 @@
 # 新闻动态 - 按时间倒序排列，最新的放最上面
 # 格式：date（日期）, text（内容，支持 HTML）
 
+- date: "Feb 2026"
+  text: "🔬 Joined <strong>Prof. Fan Lai's group at UIUC</strong>, working on efficient inference for discrete diffusion language models."
+
 - date: "Oct 2025"
   text: "🎉 Awarded the <strong>National Scholarship</strong> for the academic year 2024-2025!"
 

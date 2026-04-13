@@ -27,15 +27,13 @@ about: |
   I'm a junior year undergraduate in Computer Engineering, currently pursuing a dual degree from University of Illinois Urbana-Champaign and Zhejiang University.
 
 about_highlight: |
-  I am exploring the intersection of <strong>machine learning and computer systems</strong>, and I am currently building strong foundations in modern ML workflows and systems fundamentals.
+  My research interest lies in building <strong>autonomous agents</strong> that interact with digital environments. I am particularly excited about:
   <ul>
     <li>
-      Learning the systems challenges behind <strong>LLM training and inference</strong>
-      (e.g., memory, communication, and throughput bottlenecks).
+      <strong>Computer-use agents and GUI grounding</strong> — enabling models to perceive screens, reason over UI elements, and execute actions in real-world software environments.
     </li>
     <li>
-      Exploring <strong>reinforcement learning / multi-agent</strong> workloads from a systems perspective,
-      focusing on scalability and experiment infrastructure.
+      <strong>Efficient inference for language models</strong> — accelerating generation through techniques such as speculative decoding and adaptive computation, with a current focus on discrete diffusion language models.
     </li>
   </ul>
   <strong>Links:</strong><br>
