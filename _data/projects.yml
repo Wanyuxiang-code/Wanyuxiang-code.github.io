@@ -9,14 +9,14 @@
     - "Knowledge Base"
   link: "https://yuxiangnote.netlify.app"
 
-- title: "Financial NewsFeed"
-  description: "A stock news AI analysis platform that automatically collects news and SEC filings, generates AI-powered summaries and daily research reports with sentiment analysis."
-  icon: "fas fa-chart-line"
-  tags:
-    - "Python"
-    - "AI/LLM"
-    - "Finance"
-  link: "https://github.com/Wanyuxiang-code/Financial-NewsFeed"
+# - title: "Financial NewsFeed"
+#   description: "A stock news AI analysis platform that automatically collects news and SEC filings, generates AI-powered summaries and daily research reports with sentiment analysis."
+#   icon: "fas fa-chart-line"
+#   tags:
+#     - "Python"
+#     - "AI/LLM"
+#     - "Finance"
+#   link: "https://github.com/Wanyuxiang-code/Financial-NewsFeed"
 
 - title: "More Coming Soon..."
   description: "Exciting projects are in development. Stay tuned for updates!"
