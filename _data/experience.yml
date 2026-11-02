@@ -1,23 +1,45 @@
 # 学术经历 - 包括研究经历和助教经历，按时间倒序排列
 # 格式：date（时间段）, organization（机构）, role（职位）, type（类型：research/teaching）, description（描述）
 
-- date: "Feb 2026 – Present"
-  organization: "UIUC"
+- date: "2026"
+  project: "RoboWild"
+  topic: "Embodied Agent Benchmarking"
+  organization: "XLANG Lab, The University of Hong Kong"
+  role: "Research Assistant, advised by Prof. Tao Yu"
+  type: "research"
+  description: >
+    RoboWild studies how general-purpose robot agents handle diverse, non-templated tasks grounded in human activities,
+    spanning visual reasoning, long-horizon planning, navigation, and physical interaction.
+    I co-designed scenes and tasks, prepared assets in Blender, and configured their physical properties in Isaac Sim.
+    I also developed and refined task evaluators and conducted cross-review in Isaac Lab to check simulation stability
+    and evaluation correctness.
+
+- date: "2025–2026"
+  project: "BRISK-DLM"
+  topic: "Efficient Diffusion LM Inference"
+  organization: "University of Illinois Urbana-Champaign"
   role: "Undergraduate Researcher, advised by Prof. Fan Lai"
   type: "research"
   description: >
-    Investigating efficient inference for discrete diffusion language models (dLLMs), where inter-step decoding (ISD) pipelines denoising but suffers from a horizon problem due to its flat propose layout.
-    Proposed Tree-Structured ISD with entropy-guided branching to improve tokens-per-forward-pass, and Content-Adaptive Stride that dynamically adjusts propose window width based on local token difficulty.
-    Literature survey and proposal completed; implementation in progress.
+    BRISK-DLM addresses a bottleneck in parallel diffusion decoding: an early rejection can discard many proposed tokens.
+    I designed and trained lightweight prefix-conditioned corrector heads that rerank candidates using the selected prefix
+    and cached backbone representations, and fused their execution into the GPU decoding pipeline without extra backbone passes.
+    I also led most experiments and co-wrote the manuscript. Combined with risk–reward-weighted proposal training,
+    our method achieved a <strong>29.8% geometric-mean throughput gain</strong> over same-scale I-DLM at 32B
+    across 18 workload–concurrency settings.
 
-- date: "Jun 2024 – Apr 2025"
+- date: "2024–2025"
+  project: "ContextG"
+  topic: "Graph-Structured In-Context Learning"
   organization: "AI-Net Lab, Zhejiang University"
   role: "Undergraduate Researcher, advised by Prof. Yang Yang"
   type: "research"
   description: >
-    Aimed to improve in-context learning by introducing structural relationships among demonstration candidates and the test query.
-    Proposed ContextG: builds a learnable graph over retrieved examples and the query, uses PageRank-based filtering to select structurally important demonstrations, and encodes them at node/path/subgraph levels to capture multi-hop dependencies.
-    Outperformed SOTA by 2.74% (avg.) on four benchmarks (SST-5, HellaSwag, MRPC, MNLI); best average performance in cross-task transfer. Paper under review.
+    ContextG explores how relationships among demonstrations and a query can improve in-context learning.
+    It builds a learnable graph over these examples and combines PageRank-based selection with hierarchical structural encoding.
+    I co-developed and refined the node, path, and subgraph encodings, conducted baseline comparisons, and co-wrote the manuscript.
+    Across four datasets and two language models, ContextG improved mean accuracy by 2.74 percentage points
+    over the strongest baseline in each setting.
 
 - date: "Spring 2025"
   organization: "ZJUI"

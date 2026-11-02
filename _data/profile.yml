@@ -3,6 +3,12 @@ name_en: "Yuxiang Wan"
 name_cn: "万煜翔"
 title: "Undergraduate @ ZJUI"
 affiliation: "Zhejiang University - UIUC Institute"
+last_updated: "2026-11-02"
+cv_url: "files/CV_Yuxiang.pdf"
+phd_notice: "I am seeking Ph.D. opportunities starting in Fall 2027."
+contact_emails:
+  - "ywan18@illinois.edu"
+  - "yuxiang.23@intl.zju.edu.cn"
 
 # 头像图片路径
 avatar: "images/skydeck_crop.jpg"
@@ -24,20 +30,10 @@ social:
 
 # 关于我 - 支持 HTML 标签
 about: |
-  I'm a junior year undergraduate in Computer Engineering, currently pursuing a dual degree from University of Illinois Urbana-Champaign and Zhejiang University.
+  I'm a senior year undergraduate in Computer Engineering, currently pursuing a dual degree from University of Illinois Urbana-Champaign and Zhejiang University.
 
-about_highlight: |
-  My research interest lies in building <strong>autonomous agents</strong> that interact with digital environments. I am particularly excited about:
-  <ul>
-    <li>
-      <strong>Computer-use agents and GUI grounding</strong> — enabling models to perceive screens, reason over UI elements, and execute actions in real-world software environments.
-    </li>
-    <li>
-      <strong>Efficient inference for language models</strong> — accelerating generation through techniques such as speculative decoding and adaptive computation, with a current focus on discrete diffusion language models.
-    </li>
-  </ul>
-  <strong>Links:</strong><br>
-  📄 <a href="files/CV_Yuxiang.pdf" target="_blank">Curriculum Vitae</a> &nbsp;|&nbsp; 
-  📝 <a href="files/UIUC_Transcript.pdf" target="_blank">UIUC Transcript</a>
-  <br>
-  I am passionate about learning and sharing knowledge. Feel free to explore my <a href="https://yuxiangnote.netlify.app" target="_blank">Notepage</a> where I document my learning journey!
+research_interests:
+  - title: "Efficient LLM inference and reasoning"
+    description: "decoding acceleration and adaptive allocation of inference-time compute."
+  - title: "LLM-powered embodied agents"
+    description: "grounding language-model reasoning and planning through physical interaction and feedback."

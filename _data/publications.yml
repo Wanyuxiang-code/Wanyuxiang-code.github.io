@@ -1,24 +1,27 @@
-# 论文发表
-# 格式：title（标题）, authors（作者）, venue（发表venue）, year（年份）, links（链接列表）, image（论文图片，可选）
+# Research work — keep manuscript and preprint status explicit.
+# RoboWild is not yet released; title is provisional and author order is unconfirmed.
+# Add https://robowild.xlang.ai/ only after the project's public release is confirmed.
+- title: "RoboWild: Can Frontier Models Generalize to Robot Use in the Wild?"
+  venue: "Research manuscript"
+  year: "2026"
+  description: "A simulation benchmark for evaluating general-purpose robot agents on diverse tasks grounded in human activities."
 
-# 目前暂无论文，添加后会自动显示
-# 添加论文，复制下面的模板：
-
-# - title: "论文标题"
-#   authors: "作者1, 作者2, <strong>你的名字</strong>, 作者3"
-#   venue: "Conference/Journal Name"
-#   year: "2024"
-#   image: "images/paper-thumbnail.jpg"
-#   links:
-#     - name: "Paper"
-#       url: "https://arxiv.org/xxx"
-#     - name: "Code"
-#       url: "https://github.com/xxx"
-#   description: "论文简介"
+- title: "From Position Risks to Block Survival: Faster Generation for Diffusion Language Models"
+  authors: "Siwei Chen*, <strong>Yuxiang Wan*</strong>, Yifan Yu, Fan Lai"
+  note: "* Equal contribution"
+  venue: "Preprint"
+  year: "2026"
+  links:
+    - name: "arXiv"
+      url: "https://arxiv.org/abs/2609.33390"
+    - name: "PDF"
+      url: "https://arxiv.org/pdf/2609.33390"
+  description: "BRISK-DLM combines risk–reward-weighted proposal training and prefix-conditioned correction to improve block survival and diffusion language model throughput."
 
 - title: "Can Inherent Graph Structure Enhance In-Context Learning?"
-  authors: "Yifei Sun, Siyuan Gong, <strong>Yuxiang Wan</strong>, Zaoshi Wang, Haoyang Zhong, Chunping Wang, Lei CHEN, Yang Yang"
+  authors: "Yifei Sun, Siyuan Gong, <strong>Yuxiang Wan</strong>, Zaoshi Wang, Haoyang Zhong, Chunping Wang, Lei Chen, Yang Yang"
   venue: "Preprint"
   year: "2025"
   image: "images/ContextG.png"
-  description: "We propose ContextG, the first framework to introduce graph structures into ICL. By modeling structural relationships among examples and test queries, ContextG enhances LLM reasoning while improving efficiency."
+  description: "ContextG models relationships among demonstrations and the query through a learnable graph, PageRank-based selection, and node/path/subgraph structural encoding."
+# ContextG's internal manuscript is not a public download; add an approved public URL when available.

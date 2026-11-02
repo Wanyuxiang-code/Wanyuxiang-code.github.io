@@ -1,22 +1,39 @@
-# 新闻动态 - 按时间倒序排列，最新的放最上面
-# 格式：date（日期）, text（内容，支持 HTML）
+# Latest research and awards first. Use a year when the exact month is unconfirmed.
+- date: "2026"
+  text: >
+    Awarded the <strong>National Scholarship (Top 1%)</strong> and named to the <strong>UIUC Dean's List</strong>
+    for the third consecutive year (2024–2026).
 
-- date: "Feb 2026"
-  text: "🔬 Joined <strong>Prof. Fan Lai's group at UIUC</strong>, working on efficient inference for discrete diffusion language models."
+- date: "Sep 2026"
+  text: >
+    Our <a href="https://arxiv.org/abs/2609.33390" target="_blank" rel="noopener">BRISK-DLM preprint</a>
+    on faster diffusion language model inference is available on arXiv. Equal contribution with Siwei Chen.
+
+- date: "2026"
+  text: >
+    Working with <strong>Prof. Tao Yu at HKU's XLANG Lab</strong> on <strong>RoboWild</strong>,
+    building simulation scenes, tasks, and evaluators for embodied agents.
+
+- date: "2025–2026"
+  archived: true
+  text: "Research with <strong>Prof. Fan Lai at UIUC</strong> on efficient inference for diffusion language models."
 
 - date: "Oct 2025"
-  text: "🎉 Awarded the <strong>National Scholarship</strong> for the academic year 2024-2025!"
+  archived: true
+  text: "Awarded the <strong>National Scholarship</strong> for the academic year 2024–2025."
+
+- date: "2025"
+  archived: true
+  text: "Received the <strong>First Prize Scholarship for Academic Excellence</strong> at ZJUI."
 
 - date: "Apr 2025"
-  text: "📝 Completed my first full research cycle with a submission to <strong>KDD 2025</strong> — from literature review, experiments, paper writing to rebuttal. A valuable learning experience!"
+  archived: true
+  text: "Completed my first full research cycle with a submission to <strong>KDD 2025</strong> — from literature review and experiments to paper writing and rebuttal."
 
 - date: "Oct 2024"
-  text: "🎉 Awarded the <strong>National Scholarship</strong> for the academic year 2023-2024!"
+  archived: true
+  text: "Awarded the <strong>National Scholarship</strong> for the academic year 2023–2024."
 
 - date: "Jun 2024"
-  text: "Joined <strong>AI-Net Lab</strong> for summer research focused on building Graph Foundation Model."
-
-
-# 添加新的新闻，复制下面的模板：
-# - date: "月份 年份"
-#   text: "新闻内容"
+  archived: true
+  text: "Joined <strong>AI-Net Lab</strong> at Zhejiang University for summer research on graph-based methods for language models."

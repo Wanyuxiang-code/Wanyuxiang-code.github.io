@@ -2,17 +2,17 @@
 # 格式：year（年份）, title（奖项名称）, organization（颁发机构）, description（描述，可选）
 
 
-- year: "2024, 2025"
+- year: "2024, 2025, 2026"
+  title: "National Scholarship (Top 1%)"
+  organization: "Ministry of Education, China"
+
+- year: "2024, 2025, 2026"
   title: "Dean's List"
-  organization: "University of Illinois at Urbana-Champaign"
+  organization: "University of Illinois Urbana-Champaign"
 
 - year: "2025"
   title: "First Prize Scholarship for Academic Excellence"
   organization: "Zhejiang University-University of Illinois Urbana-Champaign Institute"
-
-- year: "2024, 2025"
-  title: "National Scholarship"
-  organization: "Ministry of Education, China"
 
 - year: "2024, 2025"
   title: "First Prize Scholarship"

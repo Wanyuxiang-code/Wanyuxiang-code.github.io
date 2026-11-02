@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>{{ site.data.profile.name_en }} | {{ site.data.profile.name_cn }}</title>
-  <meta name="description" content="Personal academic homepage of {{ site.data.profile.name_en }}, {{ site.data.profile.title }}.">
+  <meta name="description" content="{{ site.description | escape }}">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -43,7 +43,7 @@
         <ul class="nav-links">
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#news" class="nav-link">News</a></li>
-          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#publications" class="nav-link">Research Work</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#awards" class="nav-link">Awards</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -70,8 +70,8 @@
           <p class="profile-affiliation">{{ site.data.profile.affiliation }}</p>
           <div class="profile-links">
             {% for link in site.data.profile.social %}
-            <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %} class="social-link" title="{{ link.name }}">
-              <i class="{{ link.icon }}"></i>
+            <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %} class="social-link" title="{{ link.name }}" aria-label="{{ link.name }}">
+              <i class="{{ link.icon }}" aria-hidden="true"></i>
             </a>
             {% endfor %}
           </div>
@@ -92,11 +92,21 @@
         </h2>
         <div class="about-content">
           <p>{{ site.data.profile.about }}</p>
-          {% if site.data.profile.about_highlight %}
-          <div class="about-highlight">
-            <p>{{ site.data.profile.about_highlight }}</p>
+          <p class="phd-notice">{{ site.data.profile.phd_notice }}</p>
+          <div class="about-highlight" aria-labelledby="research-interests-title">
+            <h3 id="research-interests-title">Research Interests</h3>
+            <ul>
+              {% for interest in site.data.profile.research_interests %}
+              <li><strong>{{ interest.title }}:</strong> {{ interest.description }}</li>
+              {% endfor %}
+            </ul>
           </div>
-          {% endif %}
+          <div class="about-resources">
+            <a href="{{ site.data.profile.cv_url }}" class="btn btn-primary" download>
+              <i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV
+            </a>
+            <a href="files/UIUC_Transcript.pdf" target="_blank" rel="noopener">UIUC Transcript</a>
+          </div>
         </div>
       </div>
     </section>
@@ -110,12 +120,27 @@
         </h2>
         <ul class="news-list">
           {% for item in site.data.news %}
+          {% unless item.archived %}
           <li class="news-item">
             <span class="news-date">{{ item.date }}</span>
             <span class="news-text">{{ item.text }}</span>
           </li>
+          {% endunless %}
           {% endfor %}
         </ul>
+        <details class="news-archive">
+          <summary>Earlier news</summary>
+          <ul class="news-list">
+            {% for item in site.data.news %}
+            {% if item.archived %}
+            <li class="news-item">
+              <span class="news-date">{{ item.date }}</span>
+              <span class="news-text">{{ item.text }}</span>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </details>
       </div>
     </section>
 
@@ -124,7 +149,7 @@
       <div class="container">
         <h2 class="section-title">
           <span class="title-icon">✦</span>
-          Publications
+          Research Work
         </h2>
         {% if site.data.publications.size > 0 %}
         <div class="pub-list">
@@ -132,24 +157,29 @@
           <div class="pub">
             {% if pub.image %}
             <div class="pub-left">
-              <img class="intro-img" src="{{ pub.image }}">
+              <img class="intro-img" src="{{ pub.image }}" alt="{{ pub.title | escape }}" loading="lazy">
             </div>
             {% endif %}
             <div class="pub-right">
-              <div class="title">{{ pub.title }}</div>
+              <h3 class="title">{{ pub.title }}</h3>
+              {% if pub.authors %}
               <div class="authors">{{ pub.authors }}</div>
+              {% endif %}
+              {% if pub.note %}
+              <div class="pub-note">{{ pub.note }}</div>
+              {% endif %}
               <div class="publish">
                 <span class="publisher">{{ pub.venue }}, {{ pub.year }}</span>
               </div>
               {% if pub.links %}
               <div class="tags">
                 {% for link in pub.links %}
-                <a class="tag" href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+                <a class="tag" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.name }}</a>
                 {% endfor %}
               </div>
               {% endif %}
               {% if pub.description %}
-              <span>{{ pub.description }}</span>
+              <p class="pub-description">{{ pub.description }}</p>
               {% endif %}
             </div>
           </div>
@@ -176,7 +206,7 @@
         </h2>
         <div class="timeline">
           {% for exp in site.data.experience %}
-          <article class="timeline-entry">
+          <article class="timeline-entry{% if exp.type == 'research' %} research-entry{% endif %}">
             <div class="timeline-marker {% if exp.type == 'teaching' %}timeline-marker-teaching{% endif %}"></div>
             <div class="timeline-meta">
               <span class="timeline-date">{{ exp.date }}</span>
@@ -185,7 +215,12 @@
               {% endif %}
             </div>
             <div class="timeline-content">
+              {% if exp.project %}
+              <h3>{{ exp.project }} <span class="research-topic">| {{ exp.topic }}</span></h3>
+              <p class="timeline-organization">{{ exp.organization }}</p>
+              {% else %}
               <h3>{{ exp.organization }}</h3>
+              {% endif %}
               <p class="timeline-role">{{ exp.role }}</p>
               <p class="timeline-desc">{{ exp.description }}</p>
             </div>
@@ -346,27 +381,25 @@
       <div class="footer-content">
         <div class="footer-info">
           <h3>Get in Touch</h3>
-          <p>Great ideas and improvements come from open discussions. If you have any thoughts or fresh ideas you'd like to share, I'd be grateful to hear from you.</p>
+          <p>I welcome conversations about research and Ph.D. opportunities for Fall 2027.</p>
+          {% for email in site.data.profile.contact_emails %}
           <p class="footer-email">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:ywan18@illinois.edu">ywan18@illinois.edu</a>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:{{ email }}">{{ email }}</a>
           </p>
-          <p class="footer-email">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:yuxiang.23@intl.zju.edu.cn">yuxiang.23@intl.zju.edu.cn</a>
-          </p>
+          {% endfor %}
         </div>
         <div class="footer-social">
           {% for link in site.data.profile.social %}
-          <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %} class="social-link" title="{{ link.name }}">
-            <i class="{{ link.icon }}"></i>
+          <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %} class="social-link" title="{{ link.name }}" aria-label="{{ link.name }}">
+            <i class="{{ link.icon }}" aria-hidden="true"></i>
           </a>
           {% endfor %}
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 {{ site.data.profile.name_en }}. All rights reserved.</p>
-        <p class="footer-update">Last updated: January 2025</p>
+        <p>&copy; 2024–{{ site.data.profile.last_updated | date: "%Y" }} {{ site.data.profile.name_en }}. All rights reserved.</p>
+        <p class="footer-update">Last updated: {{ site.data.profile.last_updated | date: "%B %-d, %Y" }}</p>
       </div>
     </div>
   </footer>

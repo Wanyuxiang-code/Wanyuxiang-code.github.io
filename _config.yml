@@ -4,7 +4,7 @@
 
 # Site Settings
 title: "Yuxiang Wan | 万煜翔"
-description: "Personal academic homepage of Yuxiang Wan, an undergraduate student at ZJUI, Zhejiang University."
+description: "Yuxiang Wan — senior undergraduate at ZJUI. Research interests: efficient LLM inference and reasoning, and LLM-powered embodied agents. Seeking Ph.D. opportunities starting in Fall 2027."
 url: "https://wanyuxiang-code.github.io"
 baseurl: ""
 repository: "Wanyuxiang-code/Wanyuxiang-code.github.io"
@@ -17,14 +17,14 @@ author:
   bio: "Undergraduate @ ZJUI"
   affiliation: "Zhejiang University - UIUC Institute"
   location: "Hangzhou, China"
-  email: "yuxiang.23@intl.zju.edu.cn"
+  email: "ywan18@illinois.edu"
   github: "Wanyuxiang-code"
   notepage: "https://yuxiangnote.netlify.app"
 
 # Social Links
 social:
   github: "https://github.com/Wanyuxiang-code"
-  email: "yuxiang.23@intl.zju.edu.cn"
+  email: "ywan18@illinois.edu"
   notepage: "https://yuxiangnote.netlify.app"
 
 # Google Analytics (optional)
@@ -58,6 +58,8 @@ include:
 
 # Files to Exclude
 exclude:
+  # The current homepage uses main.css; the legacy theme SCSS targets the same output path.
+  - assets/css/main.scss
   - docs
   - google_scholar_crawler
   - "*.sublime-project"
