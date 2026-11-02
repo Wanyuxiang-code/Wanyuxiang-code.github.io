@@ -32,7 +32,7 @@
   --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Sizing */
-  --container-max-width: 1100px;
+  --container-max-width: 960px;
   --header-height: 64px;
   --section-padding: 40px;
   --border-radius: 10px;
@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 700px;
+  max-width: calc(var(--container-max-width) - 48px);
 }
 
 .profile-card {
@@ -383,10 +383,6 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------------------------------------------------------------------
    About Section
    -------------------------------------------------------------------------- */
-.about-content {
-  max-width: 800px;
-}
-
 .about-content p {
   font-size: 1rem;
   margin-bottom: 12px;
@@ -659,7 +655,7 @@ h1, h2, h3, h4, h5, h6 {
    -------------------------------------------------------------------------- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
 }
 
@@ -969,10 +965,6 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------------------------------------------------------------------
    Life Section
    -------------------------------------------------------------------------- */
-.life-content {
-  max-width: 900px;
-}
-
 .life-intro {
   font-size: 1rem;
   color: var(--color-text-secondary);
@@ -982,7 +974,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .life-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 20px;
 }
 
@@ -1135,7 +1127,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-info {
   flex: 1;
-  min-width: 280px;
+  min-width: min(280px, 100%);
   max-width: 500px;
 }
 
@@ -1306,7 +1298,7 @@ h1, h2, h3, h4, h5, h6 {
   
   .hero {
     min-height: auto;
-    padding: calc(var(--header-height) + 60px) 16px 80px;
+    padding: calc(var(--header-height) + 60px) 24px 80px;
   }
   
   .profile-avatar {
