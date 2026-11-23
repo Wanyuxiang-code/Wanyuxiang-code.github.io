@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 import os
 
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
@@ -21,7 +22,13 @@ class PublicProfilePages:
 
 parser = AuthorParser(PublicProfilePages())
 author = parser.get_author(os.environ['GOOGLE_SCHOLAR_ID'])
-parser.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
+try:
+    parser.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
+except HTTPError as error:
+    if error.code not in (403, 429):
+        raise
+    print(f"Google Scholar declined the refresh (HTTP {error.code}).")
+    raise SystemExit(75) from error
 # New Scholar profiles can list papers before displaying a citation summary.
 if 'citedby' not in author:
     if any(paper['num_citations'] for paper in author['publications']) or any(author['cites_per_year'].values()):

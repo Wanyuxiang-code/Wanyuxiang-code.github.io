@@ -24,16 +24,38 @@ jobs:
           python-version: '3.14'
       - name: Install crawler dependencies
         run: python -m pip install -r google_scholar_crawler/requirements.txt
-      - name: Fetch citation data
-        working-directory: google_scholar_crawler
-        env:
-          GOOGLE_SCHOLAR_ID: rG_wEGEAAAAJ
-        run: python main.py
       - uses: actions/checkout@v4
         with:
           ref: google-scholar-stats
           path: stats
+      - name: Fetch citation data
+        id: fetch
+        working-directory: google_scholar_crawler
+        env:
+          GOOGLE_SCHOLAR_ID: rG_wEGEAAAAJ
+        run: |
+          if python main.py; then
+            echo "fresh=true" >> "$GITHUB_OUTPUT"
+          else
+            status=$?
+            if [ "$status" -ne 75 ]; then exit "$status"; fi
+            python - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+
+          stats = Path("../stats")
+          data = json.loads((stats / "gs_data.json").read_text())
+          badge = json.loads((stats / "gs_data_shieldsio.json").read_text())
+          if data["scholar_id"] != os.environ["GOOGLE_SCHOLAR_ID"] or str(data["citedby"]) != badge["message"]:
+              raise ValueError("Cannot reuse citation data for this profile")
+          message = f"Refresh skipped: Scholar denied access. Last verified data: {data['updated']}."
+          print(f"::warning::{message}")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              print(message, file=summary)
+          PYTHON
+          fi
       - name: Publish citation data
+        if: steps.fetch.outputs.fresh == 'true'
         working-directory: stats
         run: |
           cp ../google_scholar_crawler/results/gs_data{,_shieldsio}.json .
