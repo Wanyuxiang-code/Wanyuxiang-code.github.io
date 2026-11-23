@@ -1,8 +1,9 @@
 # Latest research and awards first. Use a year when the exact month is unconfirmed.
 - date: "Nov 2026"
   text: >
-    We released <a href="https://robowild.xlang.ai/" target="_blank" rel="noopener">RoboWild</a>,
-    XLANG Lab’s benchmark for evaluating how vision-language models use robots in simulation.
+    I’m excited to share <a href="https://robowild.xlang.ai/" target="_blank" rel="noopener">RoboWild</a>!
+    I helped design its scenes, tasks, and evaluators at XLANG Lab. I hope it helps us build frontier
+    models that can carry out a wide range of physical tasks, even in unfamiliar environments or with a different robot.
 
 - date: "2026"
   text: >

@@ -10,11 +10,11 @@
     - name: "Code"
       url: "https://github.com/xlang-ai/RoboWild"
   description: >
-    Can a vision-language model guide a robot through everyday tasks such as packing eggs into a carton
-    or leveling a chair with a wooden block? RoboWild tests this across 38 simulated scenes, with
-    341 tasks spanning four robot embodiments. The strongest model reached 13.28% overall success.
-    Even when agents chose the right object, they could grasp empty space, lose their grip, or collide
-    with nearby furniture.
+    RoboWild measures how well frontier vision-language models can use robots to carry out instructions
+    across environments and robot bodies. Its 341 tasks span 38 simulated scenes and four robot embodiments,
+    testing navigation, manipulation, and physical tool use. The strongest model achieved 13.28% overall
+    success. Analysis of failed attempts revealed persistent difficulties with grasping, coordinating two
+    arms, and using tools.
 
 - title: "From Position Risks to Block Survival: Faster Generation for Diffusion Language Models"
   authors: "Siwei Chen*, <strong>Yuxiang Wan*</strong>, Yifan Yu, Fan Lai"
