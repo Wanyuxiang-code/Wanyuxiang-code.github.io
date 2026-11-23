@@ -1,15 +1,18 @@
 from scholarly import scholarly
-import jsonpickle
 import json
 from datetime import datetime
 import os
 
 author: dict = scholarly.search_author_id(os.environ['GOOGLE_SCHOLAR_ID'])
 scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
-name = author['name']
+# New Scholar profiles can list papers before displaying a citation summary.
+if 'citedby' not in author:
+    if any(paper['num_citations'] for paper in author['publications']) or any(author['cites_per_year'].values()):
+        raise ValueError('Citation summary missing for a profile with recorded citations')
+    author['citedby'] = 0
 author['updated'] = str(datetime.now())
 author['publications'] = {v['author_pub_id']:v for v in author['publications']}
-print(json.dumps(author, indent=2))
+print(f"Fetched {author['name']}: {len(author['publications'])} publications, {author['citedby']} citations")
 os.makedirs('results', exist_ok=True)
 with open(f'results/gs_data.json', 'w') as outfile:
     json.dump(author, outfile, ensure_ascii=False)
