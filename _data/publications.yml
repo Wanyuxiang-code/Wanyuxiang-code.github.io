@@ -1,10 +1,20 @@
-# Research work — keep manuscript and preprint status explicit.
-# RoboWild is not yet released; title is provisional and author order is unconfirmed.
-# Add https://robowild.xlang.ai/ only after the project's public release is confirmed.
 - title: "RoboWild: Can Frontier Models Generalize to Robot Use in the Wild?"
-  venue: "Research manuscript"
+  authors: "XLANG Lab (including <strong>Yuxiang Wan</strong>)"
+  venue: "Preprint"
   year: "2026"
-  description: "A simulation benchmark for evaluating general-purpose robot agents on diverse tasks grounded in human activities."
+  links:
+    - name: "Project page"
+      url: "https://robowild.xlang.ai/"
+    - name: "Paper"
+      url: "https://huggingface.co/datasets/xlangai/RoboWild/blob/main/RoboWild.pdf"
+    - name: "Code"
+      url: "https://github.com/xlang-ai/RoboWild"
+  description: >
+    Can a vision-language model guide a robot through everyday tasks such as packing eggs into a carton
+    or leveling a chair with a wooden block? RoboWild tests this across 38 simulated scenes, with
+    341 tasks spanning four robot embodiments. The strongest model reached 13.28% overall success.
+    Even when agents chose the right object, they could grasp empty space, lose their grip, or collide
+    with nearby furniture.
 
 - title: "From Position Risks to Block Survival: Faster Generation for Diffusion Language Models"
   authors: "Siwei Chen*, <strong>Yuxiang Wan*</strong>, Yifan Yu, Fan Lai"

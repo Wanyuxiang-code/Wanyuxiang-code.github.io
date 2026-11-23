@@ -1,6 +1,17 @@
 # 项目列表
 # 格式：title（标题）, description（描述）, icon（图标）, tags（标签列表）, link（链接，可选）
 
+- title: "A Unix-like Kernel for RISC-V"
+  description: >
+    In a three-person team for ECE 391 (Fall 2025), we built a kernel in C and RISC-V assembly.
+    It runs user programs with demand-paged Sv39 virtual memory and preemptive scheduling.
+    A shell supports pipes and I/O redirection, backed by a KTFS file system and a VirtIO block driver.
+  icon: "fas fa-microchip"
+  tags:
+    - "Operating Systems"
+    - "C"
+    - "RISC-V"
+
 - title: "Yuxiang's Notepage"
   description: "A comprehensive notebook documenting my learning journey, valuable resources, and study notes."
   icon: "fas fa-book-open"
@@ -17,13 +28,6 @@
 #     - "AI/LLM"
 #     - "Finance"
 #   link: "https://github.com/Wanyuxiang-code/Financial-NewsFeed"
-
-- title: "More Coming Soon..."
-  description: "Exciting projects are in development. Stay tuned for updates!"
-  icon: "fas fa-rocket"
-  tags: []
-  link: ""
-  placeholder: true  # 标记为占位项目
 
 # 添加新项目，复制下面的模板：
 # - title: "项目名称"

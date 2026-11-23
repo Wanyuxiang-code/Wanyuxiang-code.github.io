@@ -8,11 +8,9 @@
   role: "Research Assistant, advised by Prof. Tao Yu"
   type: "research"
   description: >
-    RoboWild studies how general-purpose robot agents handle diverse, non-templated tasks grounded in human activities,
-    spanning visual reasoning, long-horizon planning, navigation, and physical interaction.
-    I co-designed scenes and tasks, prepared assets in Blender, and configured their physical properties in Isaac Sim.
-    I also developed and refined task evaluators and conducted cross-review in Isaac Lab to check simulation stability
-    and evaluation correctness.
+    I co-designed scenes and tasks for RoboWild, prepared 3D assets in Blender, and configured
+    how objects move and collide in Isaac Sim. I also wrote evaluators to check whether a robot
+    had completed each task and cross-reviewed tasks in Isaac Lab to verify scoring and simulation stability.
 
 - date: "2025–2026"
   project: "BRISK-DLM"

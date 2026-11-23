@@ -1,4 +1,9 @@
 # Latest research and awards first. Use a year when the exact month is unconfirmed.
+- date: "Nov 2026"
+  text: >
+    We released <a href="https://robowild.xlang.ai/" target="_blank" rel="noopener">RoboWild</a>,
+    XLANG Lab’s benchmark for evaluating how vision-language models use robots in simulation.
+
 - date: "2026"
   text: >
     Awarded the <strong>National Scholarship (Top 1%)</strong> and named to the <strong>UIUC Dean's List</strong>
@@ -8,11 +13,6 @@
   text: >
     Our <a href="https://arxiv.org/abs/2609.33390" target="_blank" rel="noopener">BRISK-DLM preprint</a>
     on faster diffusion language model inference is available on arXiv. Equal contribution with Siwei Chen.
-
-- date: "2026"
-  text: >
-    Working with <strong>Prof. Tao Yu at HKU's XLANG Lab</strong> on <strong>RoboWild</strong>,
-    building simulation scenes, tasks, and evaluators for embodied agents.
 
 - date: "2025–2026"
   archived: true
