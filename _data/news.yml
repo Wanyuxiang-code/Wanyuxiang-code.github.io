@@ -1,9 +1,9 @@
 # Latest research and awards first. Use a year when the exact month is unconfirmed.
 - date: "Nov 2026"
   text: >
-    I’m excited to share <a href="https://robowild.xlang.ai/" target="_blank" rel="noopener">RoboWild</a>!
-    I helped design its scenes, tasks, and evaluators at XLANG Lab. I hope it helps us build frontier
-    models that can carry out a wide range of physical tasks, even in unfamiliar environments or with a different robot.
+    I’m excited to have contributed to <a href="https://robowild.xlang.ai/" target="_blank" rel="noopener">RoboWild</a>,
+    our benchmark for robot use in simulation. Our goal is for a single model to reason, write code, and operate
+    a robot when a task takes it from a computer screen into the physical world.
 
 - date: "2026"
   text: >
@@ -12,8 +12,9 @@
 
 - date: "Sep 2026"
   text: >
-    Our <a href="https://arxiv.org/abs/2609.33390" target="_blank" rel="noopener">BRISK-DLM preprint</a>
-    on faster diffusion language model inference is available on arXiv. Equal contribution with Siwei Chen.
+    <a href="https://arxiv.org/abs/2609.33390" target="_blank" rel="noopener">BRISK-DLM</a>
+    speeds up diffusion language models by helping more tokens pass verification in each parallel decoding step.
+    At 32B, it achieved 29.8% higher throughput than I-DLM (geometric mean across 18 serving settings).
 
 - date: "2025–2026"
   archived: true
