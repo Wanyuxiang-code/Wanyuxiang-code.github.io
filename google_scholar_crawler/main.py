@@ -1,10 +1,27 @@
-from scholarly import scholarly
 import json
 from datetime import datetime
 import os
 
-author: dict = scholarly.search_author_id(os.environ['GOOGLE_SCHOLAR_ID'])
-scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
+from urllib.request import urlopen
+
+from bs4 import BeautifulSoup
+from scholarly.author_parser import AuthorParser
+
+
+class PublicProfilePages:
+    """Load the profile and any publication-list pages requested by AuthorParser."""
+
+    def _get_soup(self, path):
+        with urlopen("https://scholar.google.com" + path, timeout=30) as response:
+            page = BeautifulSoup(response.read(), "html.parser")
+        if not page.select_one("#gsc_prf_in"):
+            raise ValueError("Google Scholar did not return a public author profile")
+        return page
+
+
+parser = AuthorParser(PublicProfilePages())
+author = parser.get_author(os.environ['GOOGLE_SCHOLAR_ID'])
+parser.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
 # New Scholar profiles can list papers before displaying a citation summary.
 if 'citedby' not in author:
     if any(paper['num_citations'] for paper in author['publications']) or any(author['cites_per_year'].values()):
